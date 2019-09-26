@@ -37,7 +37,23 @@ function spotifyThis(input) {
 function concertThis() {
 
     axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response) {
-        console.log(response.data);
+        //logs the total data array console.log(response.data[0]);
+        //logs the venue name
+
+        var bandTown = response.data;
+
+        for (let i = 0; i < bandTown.length; i++) {
+        console.log(`Venue: ${bandTown[i].venue.name}`);
+        console.log(`Location: ${bandTown[i].venue.city}, ${bandTown[i].venue.country}`);
+        console.log(`Date: ${moment(bandTown[i].datetime).format("MM/DD/YYYY")}`);
+        }
+
+        // console.log(response.data[0].venue.name);
+        // //logs the venue city, contry
+        // console.log(response.data[0].venue.city, response.data[0].venue.country);
+        // //logs the date and time of the event
+        // console.log(moment(response.data[0].datetime, "DDMMYYYY"));
+
     })
     .catch(function(error) {
         if (error.response) {
