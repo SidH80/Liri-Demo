@@ -37,22 +37,20 @@ function spotifyThis(input) {
 function concertThis() {
 
     axios.get("https://rest.bandsintown.com/artists/" + userInput + "/events?app_id=codingbootcamp").then(function(response) {
-        //logs the total data array console.log(response.data[0]);
-        //logs the venue name
 
         var bandTown = response.data;
 
+        //loops through the array and displays data
         for (let i = 0; i < bandTown.length; i++) {
+        //logs venue name
         console.log(`Venue: ${bandTown[i].venue.name}`);
+
+        //logs the venue city, contry
         console.log(`Location: ${bandTown[i].venue.city}, ${bandTown[i].venue.country}`);
+
+        //logs the date and time of the event
         console.log(`Date: ${moment(bandTown[i].datetime).format("MM/DD/YYYY")}`);
         }
-
-        // console.log(response.data[0].venue.name);
-        // //logs the venue city, contry
-        // console.log(response.data[0].venue.city, response.data[0].venue.country);
-        // //logs the date and time of the event
-        // console.log(moment(response.data[0].datetime, "DDMMYYYY"));
 
     })
     .catch(function(error) {
@@ -75,9 +73,6 @@ function concertThis() {
         }
         console.log(error.config);
       });
-    //Retrieve and print the Name of the Venue
-    //Retrieve and print the Venue Location
-    //Retrieve the Date of the Event(use moment to format this as "MM/DD/YYYY")
 }
 
 function movieThis() {
@@ -86,21 +81,21 @@ function movieThis() {
   function(response) {
 
     // * Title of the movie.
-    console.log(response.data.Title);
+    console.log(`Title: ${response.data.Title}`);
     // * Year the movie came out.
-    console.log(response.data.Year);
+    console.log(`Year: ${response.data.Year}`);
     // * IMDB Rating of the movie.
-    console.log(response.data.imdbRating);
+    console.log(`IMDB Rating: ${response.data.imdbRating}`);
     // * Rotten Tomatoes Rating of the movie.
-    console.log(response.data.Metascore);
+    console.log(`Metascore: ${response.data.Metascore}`);
     // * Country where the movie was produced.
-    console.log(response.data.Country);
+    console.log(`Country: ${response.data.Country}`);
     // * Language of the movie.
-    console.log(response.data.Language);
+    console.log(`Language: ${response.data.Language}`);
     // * Plot of the movie.
-    console.log(response.data.Plot);
+    console.log(`Plot: ${response.data.Plot}`);
     // * Actors in the movie.
-    console.log(response.data.Actors);
+    console.log(`Actors: ${response.data.Actors}`);
 
   })
   .catch(function(error) {
