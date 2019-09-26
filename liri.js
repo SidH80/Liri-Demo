@@ -8,26 +8,24 @@ var fs = require("fs");
 const chalk = require("chalk")
 
 var whatToDO = process.argv[2];
-var userInput = process.argv[3];
+var userInput = process.argv.slice(3).join(" ");
 
-function spotifyThis(input) {
+function spotifyThis() {
 
     spotify
-        .search({ type: 'track', query: input, limit: 1 })
+        .search({ type: 'track', query: userInput, limit: 5 })
         .then(function(response) {
-            //logs the album name
-            console.log(response.tracks.items[0].album.name);
-            //Logs the Song Name
-            console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
-            //Logs the Artists Name
-            console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
-            //Logs a spotify link to the song
-            console.log(response.tracks.items[0].album.external_urls.spotify);
 
-            // for (let i = 0; i < items.length; i++) {
-            //     console.log(items[i].name);
-            // }
-
+          //States which input you are searching
+          console.log(`Searching for ${userInput}`);
+          //Logs the Artists Name
+          console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
+          //Logs the Song Name
+          console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
+          //Logs a spotify link to the song
+          console.log(JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2));
+          //logs the album name
+          console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
         })
         .catch(function(err) {
             console.log(err);
@@ -119,11 +117,8 @@ function movieThis() {
     console.log(error.config);
   });
 
-    // retieve movie called Mr Nobody if the user leaves the movie space blank
-    if (userInput === undefined) {
-        console.log(`If you haven't watched "Mr. Nobody", then you should: http://www.imdb.com/title/tt0485947/`)
-        console.log(`It's on Nextiflix`)
-    }
+    // retrieve movie called Mr Nobody if the user leaves the movie space blank
+
     //display this link and print
         //"If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/"
         // "It's on Netflix!"
@@ -139,7 +134,7 @@ function doWhatItSays() {
 
 switch(whatToDO) {
     case "spotify-this-song":
-        spotifyThis(userInput);
+        spotifyThis();
         break;
     case "movie-this":
         movieThis();
