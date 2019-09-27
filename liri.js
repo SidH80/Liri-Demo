@@ -45,7 +45,7 @@ function spotifyThisSong () {
                       chalk.magenta(`\n-------------------------------------------------------------------`)
                       );
 
-          text.push(response.tracks.items[0].artists[0].name, response.tracks.items[0].name, response.tracks.items[0].album.external_urls.spotify, response.tracks.items[0].album.name );
+          text.push(response.tracks.items[i].artists[0].name, response.tracks.items[i].name, response.tracks.items[i].album.external_urls.spotify, response.tracks.items[i].album.name );
 
         }
         logIt();
