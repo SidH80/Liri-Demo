@@ -39,6 +39,10 @@ function spotifyThisSong () {
                       chalk.whiteBright(`\n${JSON.stringify(response.tracks.items[0].album.name, null, 2)}`),
                       chalk.magenta(`\n-------------------------------------------------------------------`)
                       );
+
+          text.push(response.tracks.items[0].artists[0].name, response.tracks.items[0].name, response.tracks.items[0].album.external_urls.spotify, response.tracks.items[0].album.name );
+
+          logIt();
         })
         .catch(function(err) {
             console.log(err);
@@ -110,25 +114,28 @@ function movieThisMovie() {
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
 
-    console.log(`Searching for the movie ${chalk.magentaBright(userInput)} . . .`);
+    console.log(`Searching for the movie ${chalk.magentaBright(userInput)} . . .`,
+                // * Title of the movie.
+                chalk.magenta(`\nTitle: ${chalk.yellowBright(response.data.Title)}`),
+                // * Year the movie came out.
+                chalk.magenta(`\nYear: ${chalk.redBright(response.data.Year)}`),
+                // * IMDB Rating of the movie.
+                chalk.magenta(`\nIMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`),
+                // * Rotten Tomatoes Rating of the movie.
+                chalk.magenta(`\nMetascore: ${chalk.greenBright(response.data.Metascore)}`),
+                // * Country where the movie was produced.
+                chalk.magenta(`\nCountry: ${chalk.yellowBright(response.data.Country)}`),
+                // * Language of the movie.
+                chalk.magenta(`\nLanguage: ${chalk.cyanBright(response.data.Language)}`),
+                // * Plot of the movie.
+                chalk.magenta(`\nPlot: ${chalk.whiteBright(response.data.Plot)}`),
+                // * Actors in the movie.
+                chalk.magenta(`\nActors: ${chalk.greenBright(response.data.Actors)}`),
+                chalk.magenta(`\n-----------------------------------------------------------------------`)
+                );
+    text.push(response.data.Title, response.data.Year, response.data.imdbRating, response.data.Metascore, response.data.Country, response.data.Language, response.data.Plot, response.data.Actors);
 
-    // * Title of the movie.
-    console.log(chalk.magenta(`Title: ${chalk.yellowBright(response.data.Title)}`));
-    // * Year the movie came out.
-    console.log(chalk.magenta(`Year: ${chalk.redBright(response.data.Year)}`));
-    // * IMDB Rating of the movie.
-    console.log(chalk.magenta(`IMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`));
-    // * Rotten Tomatoes Rating of the movie.
-    console.log(chalk.magenta(`Metascore: ${chalk.greenBright(response.data.Metascore)}`));
-    // * Country where the movie was produced.
-    console.log(chalk.magenta(`Country: ${chalk.yellowBright(response.data.Country)}`));
-    // * Language of the movie.
-    console.log(chalk.magenta(`Language: ${chalk.cyanBright(response.data.Language)}`));
-    // * Plot of the movie.
-    console.log(chalk.magenta(`Plot: ${chalk.whiteBright(response.data.Plot)}`));
-    // * Actors in the movie.
-    console.log(chalk.magenta(`Actors: ${chalk.greenBright(response.data.Actors)}`));
-    console.log(chalk.magenta(`-----------------------------------------------------------------------------`));
+    logIt();
 
   })
   .catch(function(error) {
