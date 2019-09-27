@@ -10,7 +10,7 @@ const chalk = require("chalk")
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
 
-//Function inputs a default song is user doesn't enter anything
+//Function inputs a default song if user doesn't enter anything
 function spotifyThis() {
 
   if(userInput.length == 0) {
@@ -89,6 +89,7 @@ function concertThis() {
       });
 }
 
+//Function inputs a default movie if user doesn't enter anything
 function movieThis() {
   if(userInput.length == 0) {
     userInput = "Mr. Nobody";
@@ -107,7 +108,7 @@ function movieThisMovie() {
     console.log(`Searching for the movie ${chalk.magentaBright(userInput)} . . .`);
 
     // * Title of the movie.
-    console.log(chalk.magenta(`Title: ${chalk.whiteBright(response.data.Title)}`));
+    console.log(chalk.magenta(`Title: ${chalk.yellowBright(response.data.Title)}`));
     // * Year the movie came out.
     console.log(chalk.magenta(`Year: ${chalk.redBright(response.data.Year)}`));
     // * IMDB Rating of the movie.
@@ -145,12 +146,6 @@ function movieThisMovie() {
     }
     console.log(error.config);
   });
-
-    // retrieve movie called Mr Nobody if the user leaves the movie space blank
-
-    //display this link and print
-        //"If you haven't watched "Mr. Nobody," then you should: http://www.imdb.com/title/tt0485947/"
-        // "It's on Netflix!"
 }
 
 function doWhatItSays() {
