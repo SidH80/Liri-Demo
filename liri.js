@@ -10,7 +10,7 @@ const chalk = require("chalk")
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
 
-//Function inputs a default song is user doens't enter anything
+//Function inputs a default song is user doesn't enter anything
 function spotifyThis() {
 
   if(userInput.length == 0) {
@@ -29,7 +29,7 @@ function spotifyThisSong () {
           //States which input you are searching
           console.log(`Searching for ${userInput}`);
           //Logs the Artists Name
-          console.log(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2));
+          console.log(chalk.red(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)));
           //Logs the Song Name
           console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
           //Logs a spotify link to the song
@@ -84,6 +84,16 @@ function concertThis() {
 }
 
 function movieThis() {
+  if(userInput.length == 0) {
+    userInput = "Mr. Nobody";
+    console.log(`If you haven't watched ${userInput} then you should. It's on Netflix!`);
+    movieThisMovie(userInput);
+  } else {
+    spotifyThisMovie();
+  }
+}
+
+function movieThisMovie() {
 
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
