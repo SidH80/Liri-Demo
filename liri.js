@@ -10,9 +10,19 @@ const chalk = require("chalk")
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
 
+//Function inputs a default song is user doens't enter anything
 function spotifyThis() {
 
-    spotify
+  if(userInput.length == 0) {
+    userInput = "The Ace";
+    spotifyThisSong(userInput);
+  } else {
+    spotifyThisSong();
+  }
+}
+
+function spotifyThisSong () {
+  spotify
         .search({ type: 'track', query: userInput, limit: 5 })
         .then(function(response) {
 
