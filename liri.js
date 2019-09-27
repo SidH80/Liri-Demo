@@ -28,21 +28,27 @@ function spotifyThisSong () {
         .then(function(response) {
 
           //States which input you are searching
+
+          var items = response.tracks.items;
+
+          for (let i = 0; i < items.length; i++) {
+
           console.log(chalk.magentaBright(`Searching for song ${userInput} on Spotify . . .`),
                       //Logs the Artists Name
-                      chalk.redBright(`\n${JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)}`),
+                      chalk.redBright(`\n${JSON.stringify(response.tracks.items[i].artists[0].name, null, 2)}`),
                       //Logs the Song Name
-                      chalk.blueBright(`\n${JSON.stringify(response.tracks.items[0].name, null, 2)}`),
+                      chalk.blueBright(`\n${JSON.stringify(response.tracks.items[i].name, null, 2)}`),
                       //Logs a spotify link to the song
-                      chalk.greenBright(`\n${JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2)}`),
+                      chalk.greenBright(`\n${JSON.stringify(response.tracks.items[i].album.external_urls.spotify, null, 2)}`),
                       //logs the album name
-                      chalk.whiteBright(`\n${JSON.stringify(response.tracks.items[0].album.name, null, 2)}`),
+                      chalk.whiteBright(`\n${JSON.stringify(response.tracks.items[i].album.name, null, 2)}`),
                       chalk.magenta(`\n-------------------------------------------------------------------`)
                       );
 
           text.push(response.tracks.items[0].artists[0].name, response.tracks.items[0].name, response.tracks.items[0].album.external_urls.spotify, response.tracks.items[0].album.name );
 
-          logIt();
+        }
+        logIt();
         })
         .catch(function(err) {
             console.log(err);
