@@ -23,19 +23,20 @@ function spotifyThis() {
 
 function spotifyThisSong () {
   spotify
-        .search({ type: 'track', query: userInput, limit: 5 })
+        .search({ type: 'track', query: userInput, limit: 20 })
         .then(function(response) {
 
           //States which input you are searching
-          console.log(`Searching for ${userInput}`);
+          console.log(chalk.magentaBright(`Searching for ${userInput}`));
           //Logs the Artists Name
-          console.log(chalk.red(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)));
+          console.log(chalk.redBright(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)));
           //Logs the Song Name
-          console.log(JSON.stringify(response.tracks.items[0].name, null, 2));
+          console.log(chalk.blueBright(JSON.stringify(response.tracks.items[0].name, null, 2)));
           //Logs a spotify link to the song
-          console.log(JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2));
+          console.log(chalk.greenBright(JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2)));
           //logs the album name
-          console.log(JSON.stringify(response.tracks.items[0].album.name, null, 2));
+          console.log(chalk.whiteBright(JSON.stringify(response.tracks.items[0].album.name, null, 2)));
+          console.log(chalk.magenta(`-------------------------------------------------------------------`));
         })
         .catch(function(err) {
             console.log(err);
@@ -48,16 +49,21 @@ function concertThis() {
 
         var bandTown = response.data;
 
+        console.log(`Searching for ${chalk.magentaBright(userInput)} concerts. . .`);
+
+
         //loops through the array and displays data
         for (let i = 0; i < bandTown.length; i++) {
         //logs venue name
-        console.log(`Venue: ${bandTown[i].venue.name}`);
+        console.log(chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`));
 
         //logs the venue city, contry
-        console.log(`Location: ${bandTown[i].venue.city}, ${bandTown[i].venue.country}`);
+        console.log(chalk.magenta(`Local: ${chalk.greenBright(bandTown[i].venue.city, bandTown[i].venue.country)}`));
 
         //logs the date and time of the event
-        console.log(`Date: ${moment(bandTown[i].datetime).format("MM/DD/YYYY")}`);
+        console.log(chalk.magenta(`Date: ${chalk.redBright(moment(bandTown[i].datetime).format("MM/DD/YYYY"))}`));
+
+        console.log(chalk.magenta(`-------------------------------------------------`));
         }
 
     })
@@ -89,7 +95,7 @@ function movieThis() {
     console.log(`If you haven't watched ${userInput} then you should. It's on Netflix!`);
     movieThisMovie(userInput);
   } else {
-    spotifyThisMovie();
+    movieThisMovie();
   }
 }
 
@@ -98,22 +104,25 @@ function movieThisMovie() {
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
 
+    console.log(`Searching for the movie ${chalk.magentaBright(userInput)} . . .`);
+
     // * Title of the movie.
-    console.log(`Title: ${response.data.Title}`);
+    console.log(chalk.magenta(`Title: ${chalk.whiteBright(response.data.Title)}`));
     // * Year the movie came out.
-    console.log(`Year: ${response.data.Year}`);
+    console.log(chalk.magenta(`Year: ${chalk.redBright(response.data.Year)}`));
     // * IMDB Rating of the movie.
-    console.log(`IMDB Rating: ${response.data.imdbRating}`);
+    console.log(chalk.magenta(`IMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`));
     // * Rotten Tomatoes Rating of the movie.
-    console.log(`Metascore: ${response.data.Metascore}`);
+    console.log(chalk.magenta(`Metascore: ${chalk.greenBright(response.data.Metascore)}`));
     // * Country where the movie was produced.
-    console.log(`Country: ${response.data.Country}`);
+    console.log(chalk.magenta(`Country: ${chalk.yellowBright(response.data.Country)}`));
     // * Language of the movie.
-    console.log(`Language: ${response.data.Language}`);
+    console.log(chalk.magenta(`Language: ${chalk.cyanBright(response.data.Language)}`));
     // * Plot of the movie.
-    console.log(`Plot: ${response.data.Plot}`);
+    console.log(chalk.magenta(`Plot: ${chalk.whiteBright(response.data.Plot)}`));
     // * Actors in the movie.
-    console.log(`Actors: ${response.data.Actors}`);
+    console.log(chalk.magenta(`Actors: ${chalk.greenBright(response.data.Actors)}`));
+    console.log(chalk.magenta(`-------------------------------------------------`));
 
   })
   .catch(function(error) {
