@@ -71,7 +71,7 @@ function concertThis() {
                     //logs the venue city, contry
                     chalk.magenta(`\nLocal: ${chalk.greenBright(bandTown[i].venue.city, bandTown[i].venue.country)}`),
                     //logs the date and time of the event
-                    chalk.magenta(`\nDate: ${chalk.redBright(moment(bandTown[i].datetime).format("MM/DD/YYYY"))}`),
+                    chalk.magenta(`\nDate: ${chalk.redBright(moment(bandTown[i].datetime).format("LLL"))}`),
                     chalk.magenta(`\n-------------------------------------------------`)
                     );
 
@@ -109,7 +109,7 @@ function movieThis() {
   if(userInput.length == 0) {
     userInput = "Mr. Nobody";
     console.log(`If you haven't watched ${chalk.magentaBright(userInput)} then you should. It's on Netflix!`);
-    movieThisMovie(userInput);
+    movieThisMovie();
   } else {
     movieThisMovie();
   }
