@@ -93,7 +93,7 @@ function concertThis() {
 function movieThis() {
   if(userInput.length == 0) {
     userInput = "Mr. Nobody";
-    console.log(`If you haven't watched ${userInput} then you should. It's on Netflix!`);
+    console.log(`If you haven't watched ${chalk.magentaBright(userInput)} then you should. It's on Netflix!`);
     movieThisMovie(userInput);
   } else {
     movieThisMovie();
@@ -123,7 +123,7 @@ function movieThisMovie() {
     console.log(chalk.magenta(`Plot: ${chalk.whiteBright(response.data.Plot)}`));
     // * Actors in the movie.
     console.log(chalk.magenta(`Actors: ${chalk.greenBright(response.data.Actors)}`));
-    console.log(chalk.magenta(`-------------------------------------------------`));
+    console.log(chalk.magenta(`-----------------------------------------------------------------------------`));
 
   })
   .catch(function(error) {
@@ -148,25 +148,40 @@ function movieThisMovie() {
   });
 }
 
+//function pulls follows instructions on the random.text file
 function doWhatItSays() {
 
-    // Using the fs Node package, LIRI will take the text inside of random.txt and then use it to call one of LIRI's commands.
-    // It should run spotify-this-song for "I Want it That Way," as follows the text in random.txt.
-    // Edit the text in random.txt to test out the feature for movie-this and concert-this.
+  fs.readFile("random.text", "utf8", function(error, data) {
+
+    if (error) {
+      return console.log(error);
+    }
+
+    var dataArr = data.split(", ");
+
+    whatToDO = dataArr[0];
+    userInput = dataArr[1];
+
+    switchIt();
+  })
 
 }
 
-switch(whatToDO) {
-    case "spotify-this-song":
-        spotifyThis();
-        break;
-    case "movie-this":
-        movieThis();
-        break;
-    case "concert-this":
-        concertThis();
-        break;
-    case "do-what-it-says":
-        doWhatItSays();
-        break;
+function switchIt() {
+    switch(whatToDO) {
+        case "spotify-this-song":
+            spotifyThis();
+            break;
+        case "movie-this":
+            movieThis();
+            break;
+        case "concert-this":
+            concertThis();
+            break;
+        case "do-what-it-says":
+            doWhatItSays();
+            break;
+    }
 }
+
+switchIt();
