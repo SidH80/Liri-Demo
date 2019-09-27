@@ -6,6 +6,7 @@ var axios = require("axios");
 var moment = require("moment");
 var fs = require("fs");
 const chalk = require("chalk")
+var text = [];
 
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
@@ -27,16 +28,17 @@ function spotifyThisSong () {
         .then(function(response) {
 
           //States which input you are searching
-          console.log(chalk.magentaBright(`Searching for ${userInput}`));
-          //Logs the Artists Name
-          console.log(chalk.redBright(JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)));
-          //Logs the Song Name
-          console.log(chalk.blueBright(JSON.stringify(response.tracks.items[0].name, null, 2)));
-          //Logs a spotify link to the song
-          console.log(chalk.greenBright(JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2)));
-          //logs the album name
-          console.log(chalk.whiteBright(JSON.stringify(response.tracks.items[0].album.name, null, 2)));
-          console.log(chalk.magenta(`-------------------------------------------------------------------`));
+          console.log(chalk.magentaBright(`Searching for song ${userInput} on Spotify . . .`),
+                      //Logs the Artists Name
+                      chalk.redBright(`\n${JSON.stringify(response.tracks.items[0].artists[0].name, null, 2)}`),
+                      //Logs the Song Name
+                      chalk.blueBright(`\n${JSON.stringify(response.tracks.items[0].name, null, 2)}`),
+                      //Logs a spotify link to the song
+                      chalk.greenBright(`\n${JSON.stringify(response.tracks.items[0].album.external_urls.spotify, null, 2)}`),
+                      //logs the album name
+                      chalk.whiteBright(`\n${JSON.stringify(response.tracks.items[0].album.name, null, 2)}`),
+                      chalk.magenta(`\n-------------------------------------------------------------------`)
+                      );
         })
         .catch(function(err) {
             console.log(err);
@@ -55,16 +57,19 @@ function concertThis() {
         //loops through the array and displays data
         for (let i = 0; i < bandTown.length; i++) {
         //logs venue name
-        console.log(chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`));
+        console.log(chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`),
+                    //logs the venue city, contry
+                    chalk.magenta(`\nLocal: ${chalk.greenBright(bandTown[i].venue.city, bandTown[i].venue.country)}`),
+                    //logs the date and time of the event
+                    chalk.magenta(`\nDate: ${chalk.redBright(moment(bandTown[i].datetime).format("MM/DD/YYYY"))}`),
+                    chalk.magenta(`\n-------------------------------------------------`)
+                    );
 
-        //logs the venue city, contry
-        console.log(chalk.magenta(`Local: ${chalk.greenBright(bandTown[i].venue.city, bandTown[i].venue.country)}`));
+        text.push(bandTown[i].venue.name, bandTown[i].venue.city, bandTown[i].venue.country, bandTown[i].datetime);
 
-        //logs the date and time of the event
-        console.log(chalk.magenta(`Date: ${chalk.redBright(moment(bandTown[i].datetime).format("MM/DD/YYYY"))}`));
-
-        console.log(chalk.magenta(`-------------------------------------------------`));
         }
+
+        logIt();
 
     })
     .catch(function(error) {
@@ -182,6 +187,21 @@ function switchIt() {
             doWhatItSays();
             break;
     }
+}
+
+function logIt() {
+
+  fs.appendFile("log.txt", ", " + text , function(err) {
+
+  if (err) {
+      console.log(err);
+  }
+
+  else {
+      console.log("Content Added!");
+  }
+
+  });
 }
 
 switchIt();
