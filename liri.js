@@ -15,7 +15,7 @@ var userInput = process.argv.slice(3).join(" ");
 function spotifyThis() {
 
   if(userInput.length == 0) {
-    userInput = "The Ace";
+    userInput = "The Sign Ace of Base";
     spotifyThisSong(userInput);
   } else {
     spotifyThisSong();
@@ -24,7 +24,7 @@ function spotifyThis() {
 
 function spotifyThisSong () {
   spotify
-        .search({ type: 'track', query: userInput, limit: 20 })
+        .search({ type: 'track', query: userInput, limit: 5 })
         .then(function(response) {
 
           //States which input you are searching
@@ -69,7 +69,7 @@ function concertThis() {
         //logs venue name
         console.log(chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`),
                     //logs the venue city, contry
-                    chalk.magenta(`\nLocal: ${chalk.greenBright(bandTown[i].venue.city, bandTown[i].venue.country)}`),
+                    chalk.magenta(`\nLocal: ${chalk.greenBright(bandTown[i].venue.city)}, ${chalk.greenBright(bandTown[i].venue.country)}`),
                     //logs the date and time of the event
                     chalk.magenta(`\nDate: ${chalk.redBright(moment(bandTown[i].datetime).format("LLL"))}`),
                     chalk.magenta(`\n-------------------------------------------------`)
@@ -171,7 +171,7 @@ function doWhatItSays() {
 
   fs.readFile("random.text", "utf8", function(error, data) {
 
-    if (error) {
+    if (error) {d
       return console.log(error);
     }
 
