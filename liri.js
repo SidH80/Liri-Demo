@@ -128,7 +128,7 @@ function movieThisMovie() {
                 // * IMDB Rating of the movie.
                 chalk.magenta(`\nIMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`),
                 // * Rotten Tomatoes Rating of the movie.
-                chalk.magenta(`\nMetascore: ${chalk.greenBright(response.data.Metascore)}`),
+                chalk.magenta(`\nRotten Tomatoes Score: ${chalk.greenBright(response.data.Ratings[1].Value)}`),
                 // * Country where the movie was produced.
                 chalk.magenta(`\nCountry: ${chalk.yellowBright(response.data.Country)}`),
                 // * Language of the movie.
