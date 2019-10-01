@@ -4,7 +4,7 @@
 
 ### Below is a link to the program demonstration of how Liri Works!
 
-#### [Liri Bot Demo](https://drive.google.com/file/d/1lV8CxvwBJyhSlpUpPryX9VcIJk0A85T7/view)
+## [Liri Bot Demo](https://drive.google.com/file/d/1lV8CxvwBJyhSlpUpPryX9VcIJk0A85T7/view)
 
 * Using <spotify-this-song> <song name>
 *LIRI will search Spotify for a song
