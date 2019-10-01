@@ -6,7 +6,9 @@ var axios = require("axios");
 var moment = require("moment");
 var fs = require("fs");
 const chalk = require("chalk")
-var text = [];
+let divider = "\n------------------------------------------------------------\n\n";
+let text = [];
+let result = [];
 
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
@@ -24,35 +26,47 @@ function spotifyThis() {
 
 function spotifyThisSong () {
   spotify
-        .search({ type: 'track', query: userInput, limit: 5 })
-        .then(function(response) {
+    .search({ type: 'track', query: userInput, limit: 5 })
+    .then(function(response) {
 
-          //States which input you are searching
+      //States which input you are searching
 
-          var items = response.tracks.items;
+      var items = response.tracks.items;
 
-          for (let i = 0; i < items.length; i++) {
+      console.log(chalk.magentaBright(`\nSearching for song ${userInput} on Spotify . . .\n`));
 
-          console.log(chalk.magentaBright(`Searching for song ${userInput} on Spotify . . .`),
-                      //Logs the Artists Name
-                      chalk.redBright(`\n${JSON.stringify(response.tracks.items[i].artists[0].name, null, 2)}`),
-                      //Logs the Song Name
-                      chalk.blueBright(`\n${JSON.stringify(response.tracks.items[i].name, null, 2)}`),
-                      //Logs a spotify link to the song
-                      chalk.greenBright(`\n${JSON.stringify(response.tracks.items[i].album.external_urls.spotify, null, 2)}`),
-                      //logs the album name
-                      chalk.whiteBright(`\n${JSON.stringify(response.tracks.items[i].album.name, null, 2)}`),
-                      chalk.magenta(`\n-------------------------------------------------------------------`)
-                      );
+      for (let i = 0; i < items.length; i++) {
 
-          text.push(response.tracks.items[i].artists[0].name, response.tracks.items[i].name, response.tracks.items[i].album.external_urls.spotify, response.tracks.items[i].album.name );
+      result = [
 
-        }
-        logIt();
-        })
-        .catch(function(err) {
-            console.log(err);
-        });
+        //Logs the Artists Name
+        chalk.magentaBright(`Artist: ${chalk.redBright(items[i].artists[0].name)}`),
+        //Logs the Song Name
+        chalk.magentaBright(`Song: ${chalk.blueBright(response.tracks.items[i].name)}`),
+        //Logs a spotify link to the song
+        chalk.magentaBright(`URL: ${chalk.greenBright(items[i].album.external_urls.spotify)}`),
+        //logs the album name
+        chalk.magentaBright(`Album: ${chalk.whiteBright(response.tracks.items[i].album.name)}`),
+      ].join("\n");
+
+      text = [
+        "Artist(s): " + items[i].artists[0].name,
+        "Song: " + items[i].name,
+        "URL: " + items[i].album.external_urls.spotify,
+        "Album: " + items[i].album.name
+      ].join("\n\n");
+
+      console.log(result);
+      console.log(divider);
+
+      logIt();
+    }
+
+
+  })
+    .catch(function(err) {
+        console.log(err);
+    });
 }
 
 function concertThis() {
@@ -61,25 +75,31 @@ function concertThis() {
 
         var bandTown = response.data;
 
-        console.log(`Searching for ${chalk.magentaBright(userInput)} concerts. . .`);
-
+        console.log(`\nSearching for ${chalk.magentaBright(userInput)} concerts. . .`);
 
         //loops through the array and displays data
         for (let i = 0; i < bandTown.length; i++) {
         //logs venue name
-        console.log(chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`),
-                    //logs the venue city, contry
-                    chalk.magenta(`\nLocal: ${chalk.greenBright(bandTown[i].venue.city)}, ${chalk.greenBright(bandTown[i].venue.country)}`),
-                    //logs the date and time of the event
-                    chalk.magenta(`\nDate: ${chalk.redBright(moment(bandTown[i].datetime).format("LLL"))}`),
-                    chalk.magenta(`\n-------------------------------------------------`)
-                    );
+        result = [
+          chalk.magenta(`Venue: ${chalk.blueBright(bandTown[i].venue.name)}`),
+            //logs the venue city, country
+            chalk.magenta(`Local: ${chalk.greenBright(bandTown[i].venue.city)}, ${chalk.greenBright(bandTown[i].venue.country)}`),
+            //logs the date and time of the event
+            chalk.magenta(`Date: ${chalk.redBright(moment(bandTown[i].datetime).format("LLL"))}`),
+        ].join("\n");
 
-        text.push(bandTown[i].venue.name, bandTown[i].venue.city, bandTown[i].venue.country, bandTown[i].datetime);
+        text = [
+          "Venue:" + bandTown[i].venue.name,
+          "Local: " + bandTown[i].venue.city + ", " + bandTown[i].venue.country, "Date: " + moment(bandTown[i].datetime).format("LLL")
+        ].join("\n\n");
 
-        }
+        console.log(result);
+        console.log(divider);
 
         logIt();
+      }
+
+
 
     })
     .catch(function(error) {
@@ -120,28 +140,43 @@ function movieThisMovie() {
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
 
-    console.log(`Searching for the movie ${chalk.magentaBright(userInput)} . . .`,
-                // * Title of the movie.
-                chalk.magenta(`\nTitle: ${chalk.yellowBright(response.data.Title)}`),
-                // * Year the movie came out.
-                chalk.magenta(`\nYear: ${chalk.redBright(response.data.Year)}`),
-                // * IMDB Rating of the movie.
-                chalk.magenta(`\nIMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`),
-                // * Rotten Tomatoes Rating of the movie.
-                chalk.magenta(`\nRotten Tomatoes Score: ${chalk.greenBright(response.data.Ratings[1].Value)}`),
-                // * Country where the movie was produced.
-                chalk.magenta(`\nCountry: ${chalk.yellowBright(response.data.Country)}`),
-                // * Language of the movie.
-                chalk.magenta(`\nLanguage: ${chalk.cyanBright(response.data.Language)}`),
-                // * Plot of the movie.
-                chalk.magenta(`\nPlot: ${chalk.whiteBright(response.data.Plot)}`),
-                // * Actors in the movie.
-                chalk.magenta(`\nActors: ${chalk.greenBright(response.data.Actors)}`),
-                chalk.magenta(`\n-----------------------------------------------------------------------`)
-                );
-    text.push(response.data.Title, response.data.Year, response.data.imdbRating, response.data.Metascore, response.data.Country, response.data.Language, response.data.Plot, response.data.Actors);
+    console.log(`\nSearching for the movie ${chalk.magentaBright(userInput)}. . .\n`);
 
-    logIt();
+    result = [
+
+      // * Title of the movie.
+      chalk.magenta(`Title: ${chalk.yellowBright(response.data.Title)}`),
+      // * Year the movie came out.
+      chalk.magenta(`Year: ${chalk.redBright(response.data.Year)}`),
+      // * IMDB Rating of the movie.
+      chalk.magenta(`IMDB Rating: ${chalk.blueBright(response.data.imdbRating)}`),
+      // * Rotten Tomatoes Rating of the movie.
+      chalk.magenta(`Rotten Tomatoes Score: ${chalk.greenBright(response.data.Ratings[1].Value)}`),
+      // * Country where the movie was produced.
+      chalk.magenta(`Country: ${chalk.yellowBright(response.data.Country)}`),
+      // * Language of the movie.
+      chalk.magenta(`Language: ${chalk.cyanBright(response.data.Language)}`),
+      // * Plot of the movie.
+      chalk.magenta(`Plot: ${chalk.whiteBright(response.data.Plot)}`),
+      // * Actors in the movie.
+      chalk.magenta(`Actors: ${chalk.greenBright(response.data.Actors)}`),
+    ].join(`\n`);
+
+  text = [
+    "Title: " + response.data.Title,
+    "Year: " + response.data.Year,
+    "IMDB Rating: " + response.data.imdbRating,
+    "Rotten Tomatoes: " + response.data.Ratings[1].Value,
+    "Country: " + response.data.Country,
+    "Language: " + response.data.Language,
+    "Plot: " + response.data.Plot,
+    "Actors: " + response.data.Actors
+  ].join("\n\n");
+
+  console.log(result);
+  console.log(divider);
+
+  logIt();
 
   })
   .catch(function(error) {
@@ -186,35 +221,28 @@ function doWhatItSays() {
 }
 
 function switchIt() {
-    switch(whatToDO) {
-        case "spotify-this-song":
-            spotifyThis();
-            break;
-        case "movie-this":
-            movieThis();
-            break;
-        case "concert-this":
-            concertThis();
-            break;
-        case "do-what-it-says":
-            doWhatItSays();
-            break;
-    }
-}
+  switch(whatToDO) {
+    case "spotify-this-song":
+      spotifyThis();
+      break;
+    case "movie-this":
+      movieThis();
+      break;
+    case "concert-this":
+      concertThis();
+      break;
+    case "do-what-it-says":
+      doWhatItSays();
+      break;
+  }
+};
 
 function logIt() {
 
-  fs.appendFile("log.txt", ", " + text , function(err) {
+  fs.appendFile("log.txt", text + divider, function(err) {
 
-  if (err) {
-      console.log(err);
-  }
-
-  else {
-      console.log("Content Added!");
-  }
-
-  });
-}
+    if (err) throw err;
+    });
+};
 
 switchIt();
