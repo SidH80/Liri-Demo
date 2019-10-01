@@ -30,4 +30,5 @@ LIRI will also read and execute commands in a separate text file by typing
 ![Spotify](assets/do-what-it-says.gif)
 ![Spotify](assets/do-what-it-says2.gif)
 
+### Bonus
 * In Addition, LIRI will log your searched to a text file.
