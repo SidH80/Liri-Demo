@@ -2,12 +2,13 @@
 
 ## Liri is like iPhone's Siri. However, while SIRI is a Speech Interpretation and Recognition Interface, LIRI is a Language Interpretation and Recognition Interface. LIRI is a CLI app that takes in parameters and gives you back data.
 
-### Below is a link to the program demonstration of how Liri Works!
+### Below is a link to the program demonstration of how LIRI Works!
 
 ## [Liri Bot Demo](https://drive.google.com/file/d/1lV8CxvwBJyhSlpUpPryX9VcIJk0A85T7/view)
 
-* Using spotify-this-song song-name
-*LIRI will search Spotify for a song
+*LIRI will search Spotify for a song by typing
+* spotify-this-song
+* song-name
 
 ![Spotify](assets/spotify-this.gif)
 
