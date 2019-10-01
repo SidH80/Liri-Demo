@@ -239,7 +239,7 @@ function switchIt() {
 
 function logIt() {
 
-  fs.appendFile("log.txt", text + divider, function(err) {
+  fs.appendFile("log.txt", text + divider, "utf8", function(err) {
 
     if (err) throw err;
     });
