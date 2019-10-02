@@ -380,3 +380,522 @@ Local: Los Angeles, United States
 Date: March 5, 2020 8:00 PM
 ------------------------------------------------------------
 
+Venue:Palau de la Música Catalana
+
+Local: Barcelona, Spain
+
+Date: October 26, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:National Music Auditorium
+
+Local: Madrid, Spain
+
+Date: October 28, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Festival Internazionale Jazz In Sardegna
+
+Local: Cagliari, Italy
+
+Date: October 30, 2019 12:00 PM
+------------------------------------------------------------
+
+Venue:Unojazz & Blues
+
+Local: San Remo, Italy
+
+Date: October 31, 2019 9:15 PM
+------------------------------------------------------------
+
+Venue:Milan Conservatory
+
+Local: Milano, Italy
+
+Date: November 1, 2019 9:00 PM
+------------------------------------------------------------
+
+Venue:TivoliVredenburg
+
+Local: Utrecht, Netherlands
+
+Date: November 4, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Rudolf Oetker Hall
+
+Local: Bi, Germany
+
+Date: November 6, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Tonhalle
+
+Local: Düsseldorf, Germany
+
+Date: November 7, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Audiorium de Lyon
+
+Local: Lyon, France
+
+Date: November 2, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:O2 universum
+
+Local: Praha, Czech Republic
+
+Date: November 9, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Jahrhunderthalle
+
+Local: Frankfurt Am Main, Germany
+
+Date: November 10, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Salle Pleyel
+
+Local: Paris, France
+
+Date: November 14, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Philharmonie am Gasteig
+
+Local: München, Germany
+
+Date: November 13, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Philharmonie Luxembourg
+
+Local: Luxembourg, Luxembourg
+
+Date: November 16, 2019 5:00 PM
+------------------------------------------------------------
+
+Venue:Barbican Centre
+
+Local: London, United Kingdom
+
+Date: November 19, 2019 12:00 AM
+------------------------------------------------------------
+
+Venue:Orchestre National du Capitole de Toulouse
+
+Local: Vieille-toulouse, France
+
+Date: November 21, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Opera House
+
+Local: Monaco-ville, Monaco
+
+Date: November 22, 2019 3:00 PM
+------------------------------------------------------------
+
+Venue:Barbican Centre
+
+Local: London, United Kingdom
+
+Date: November 17, 2019 7:30 PM
+------------------------------------------------------------
+
+Venue:Elbphilharmonie Hamburg
+
+Local: Hamburg, Germany
+
+Date: November 24, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Haus Auensee
+
+Local: Leipzig, Germany
+
+Date: November 27, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:BOZAR
+
+Local: Bruxelles, Belgium
+
+Date: November 25, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Festspielhaus Baden-Baden
+
+Local: Baden-baden, Germany
+
+Date: November 29, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Steigerwaldstadion
+
+Local: Ef, Germany
+
+Date: December 1, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Kammermusiksaal / Berliner Philharmonie
+
+Local: Berlin, Germany
+
+Date: December 2, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Power to the People!
+
+Local: Los Angeles, United States
+
+Date: March 5, 2020 8:00 PM
+------------------------------------------------------------
+
+Title: Rampage
+
+Year: 2018
+
+IMDB Rating: 6.1
+
+Rotten Tomatoes: 52%
+
+Country: USA
+
+Language: English, American Sign Language
+
+Plot: When three different animals become infected with a dangerous pathogen, a primatologist and a geneticist team up to stop them from destroying Chicago.
+
+Actors: Dwayne Johnson, Naomie Harris, Malin Akerman, Jeffrey Dean Morgan
+------------------------------------------------------------
+
+Artist(s): John Coltrane
+
+Song: Giant Steps
+
+URL: https://open.spotify.com/album/3kxiL93hCFCIXkXJBLcYDi
+
+Album: Giant Steps (Deluxe Edition)
+------------------------------------------------------------
+
+Artist(s): John Coltrane
+
+Song: Giant Steps
+
+URL: https://open.spotify.com/album/7cZ6oBx0SEUPDAoxJtxNDh
+
+Album: Giant Steps
+------------------------------------------------------------
+
+Artist(s): John Coltrane
+
+Song: Naima
+
+URL: https://open.spotify.com/album/3kxiL93hCFCIXkXJBLcYDi
+
+Album: Giant Steps (Deluxe Edition)
+------------------------------------------------------------
+
+Artist(s): Tommy Flanagan
+
+Song: Naima
+
+URL: https://open.spotify.com/album/1mws5azyWvnyPkaNZEDGa4
+
+Album: Giant Steps
+------------------------------------------------------------
+
+Artist(s): John Coltrane
+
+Song: Mr. P.C.
+
+URL: https://open.spotify.com/album/3kxiL93hCFCIXkXJBLcYDi
+
+Album: Giant Steps (Deluxe Edition)
+------------------------------------------------------------
+
+Venue:Palau de la Música Catalana
+
+Local: Barcelona, Spain
+
+Date: October 26, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:National Music Auditorium
+
+Local: Madrid, Spain
+
+Date: October 28, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Festival Internazionale Jazz In Sardegna
+
+Local: Cagliari, Italy
+
+Date: October 30, 2019 12:00 PM
+------------------------------------------------------------
+
+Venue:Milan Conservatory
+
+Local: Milano, Italy
+
+Date: November 1, 2019 9:00 PM
+------------------------------------------------------------
+
+Venue:Unojazz & Blues
+
+Local: San Remo, Italy
+
+Date: October 31, 2019 9:15 PM
+------------------------------------------------------------
+
+Venue:TivoliVredenburg
+
+Local: Utrecht, Netherlands
+
+Date: November 4, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Rudolf Oetker Hall
+
+Local: Bi, Germany
+
+Date: November 6, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Tonhalle
+
+Local: Düsseldorf, Germany
+
+Date: November 7, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:O2 universum
+
+Local: Praha, Czech Republic
+
+Date: November 9, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Jahrhunderthalle
+
+Local: Frankfurt Am Main, Germany
+
+Date: November 10, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Audiorium de Lyon
+
+Local: Lyon, France
+
+Date: November 2, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Philharmonie am Gasteig
+
+Local: München, Germany
+
+Date: November 13, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Salle Pleyel
+
+Local: Paris, France
+
+Date: November 14, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Philharmonie Luxembourg
+
+Local: Luxembourg, Luxembourg
+
+Date: November 16, 2019 5:00 PM
+------------------------------------------------------------
+
+Venue:Barbican Centre
+
+Local: London, United Kingdom
+
+Date: November 19, 2019 12:00 AM
+------------------------------------------------------------
+
+Venue:Orchestre National du Capitole de Toulouse
+
+Local: Vieille-toulouse, France
+
+Date: November 21, 2019 7:00 PM
+------------------------------------------------------------
+
+Venue:Barbican Centre
+
+Local: London, United Kingdom
+
+Date: November 17, 2019 7:30 PM
+------------------------------------------------------------
+
+Venue:Elbphilharmonie Hamburg
+
+Local: Hamburg, Germany
+
+Date: November 24, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:BOZAR
+
+Local: Bruxelles, Belgium
+
+Date: November 25, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Opera House
+
+Local: Monaco-ville, Monaco
+
+Date: November 22, 2019 3:00 PM
+------------------------------------------------------------
+
+Venue:Festspielhaus Baden-Baden
+
+Local: Baden-baden, Germany
+
+Date: November 29, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Kammermusiksaal / Berliner Philharmonie
+
+Local: Berlin, Germany
+
+Date: December 2, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Steigerwaldstadion
+
+Local: Ef, Germany
+
+Date: December 1, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Haus Auensee
+
+Local: Leipzig, Germany
+
+Date: November 27, 2019 8:00 PM
+------------------------------------------------------------
+
+Venue:Power to the People!
+
+Local: Los Angeles, United States
+
+Date: March 5, 2020 8:00 PM
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: The Sign
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: All That She Wants
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: Don't Turn Around
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: The Sign
+
+URL: https://open.spotify.com/album/0nQFgMfnmWrcWDOQqIgJL7
+
+Album: Greatest Hits
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: Happy Nation
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: The Sign
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: All That She Wants
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: Happy Nation
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: The Sign
+
+URL: https://open.spotify.com/album/0nQFgMfnmWrcWDOQqIgJL7
+
+Album: Greatest Hits
+------------------------------------------------------------
+
+Artist(s): Ace of Base
+
+Song: Don't Turn Around
+
+URL: https://open.spotify.com/album/5UwIyIyFzkM7wKeGtRJPgB
+
+Album: The Sign (US Album) [Remastered]
+------------------------------------------------------------
+
+Title: Mr. Nobody
+
+Year: 2009
+
+IMDB Rating: 7.8
+
+Rotten Tomatoes: 66%
+
+Country: Belgium, Germany, Canada, France, USA, UK
+
+Language: English, Mohawk
+
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+
+Actors: Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+------------------------------------------------------------
+

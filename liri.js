@@ -13,18 +13,13 @@ let result = [];
 var whatToDO = process.argv[2];
 var userInput = process.argv.slice(3).join(" ");
 
-//Function inputs a default song if user doesn't enter anything
-function spotifyThis() {
+
+function spotifyThis () {
 
   if(userInput.length == 0) {
     userInput = "The Sign Ace of Base";
-    spotifyThisSong(userInput);
-  } else {
-    spotifyThisSong();
   }
-}
 
-function spotifyThisSong () {
   spotify
     .search({ type: 'track', query: userInput, limit: 5 })
     .then(function(response) {
@@ -125,17 +120,13 @@ function concertThis() {
 }
 
 //Function inputs a default movie if user doesn't enter anything
+
 function movieThis() {
+
   if(userInput.length == 0) {
     userInput = "Mr. Nobody";
     console.log(`If you haven't watched ${chalk.magentaBright(userInput)} then you should. It's on Netflix!`);
-    movieThisMovie();
-  } else {
-    movieThisMovie();
   }
-}
-
-function movieThisMovie() {
 
     axios.get("http://www.omdbapi.com/?t=" + userInput + "&y=&plot=short&apikey=trilogy").then(
   function(response) {
@@ -206,7 +197,7 @@ function doWhatItSays() {
 
   fs.readFile("random.text", "utf8", function(error, data) {
 
-    if (error) {d
+    if (error) {
       return console.log(error);
     }
 
